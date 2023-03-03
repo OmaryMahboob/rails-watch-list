@@ -1,0 +1,12 @@
+<% @movies.each do |movie|%>
+  <div >
+    <div style="width: 10px">
+      <img src="<%= movie.poster_url %>" alt="movie image" width="193" height="130">
+    </div>
+    <div>
+      <ul> <h3><%= movie.title %></h3>  </ul>
+      <ul> <%= movie.overview %> </ul>
+      <ul> <h3><%= movie.rating %></h3> </ul>
+    </div>
+  </div>
+<% end %>

@@ -1,11 +1,25 @@
+<%= render 'header' %>
+
 <div class="container">
-<% movie = @movie%>
-    <div>
-      <img src="<%= movie.poster_url%>" alt="<%= movie.title %>" height= "300" width= "300">
+  <div class="row movie-display">
+    <div class="col-lg-6">
+      <img class="img-display-poster" src="<%= @movie.poster_url %>" >
     </div>
-    <div>
-      <h3><%= "#{movie.title}"%></h3>
-      <p> <%= movie.overview %> </p>
-      <h4> <%= movie.rating %> </h4>
+    <div class="col-lg-6 movie-display-content">
+      <div class="movie-header-content">
+        <p class="movie-title"><%= @movie.title %></p>
+        <p class="btn-movie-edit"><%= link_to "Edit movie", edit_movie_path(@movie) %></p>
+      </div>
+
+      <div>
+        <p><span class="movie-rating"><%= @movie.rating %></span></p>
+      </div>
+
+        <p>
+          <%= @movie.overview %>
+        </p>
+        <p class="btn-movie-edit"><%= link_to "delete movie", ("movie#destroy") %></p>
     </div>
+
   </div>
+</div>
